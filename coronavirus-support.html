@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coronavirus Help & Support | Diamond Heart Health Care</title>
+<meta name="description" content="How Diamond Heart Health Care continues to keep clients and carers safe, with infection control measures and guidance around coronavirus.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--navy:#123B5C;--teal:#EE6C20;--sky:#F5934D;--gold:#C94A0F;--cream:#F7F4EF;--white:#FFFFFF;--charcoal:#2D3748;--muted:#6B7280;--border:#E2E8F0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--charcoal);background:var(--white)}
+  .top-bar{background:var(--navy);color:rgba(255,255,255,.75);font-size:12px;padding:8px 0}
+  .top-bar .inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  .tb-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:3px 10px;font-size:11px;margin-right:8px}
+  nav{background:var(--white);position:sticky;top:0;z-index:100;box-shadow:0 1px 0 var(--border),0 4px 24px rgba(18,59,92,.06)}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo-img{height:52px;width:auto;display:block}
+  .nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+  .nav-links a{font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;padding:8px 12px;border-radius:6px;transition:all .2s}
+  .nav-links a:hover{color:var(--teal);background:rgba(238,108,32,.06)}
+  .nav-links .has-drop{position:relative}
+  .nav-links .has-drop:hover .dropdown{opacity:1;pointer-events:all;transform:translateY(0)}
+  .dropdown{position:absolute;top:calc(100% + 8px);left:0;background:white;border:1px solid var(--border);border-radius:10px;padding:8px;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,.12);opacity:0;pointer-events:none;transform:translateY(-8px);transition:all .22s;z-index:50}
+  .dropdown a{display:block;font-size:13px;padding:9px 14px;border-radius:6px;color:var(--charcoal);text-transform:none;letter-spacing:0;font-weight:400}
+  .dropdown a:hover{background:var(--cream);color:var(--teal)}
+  .nav-cta{background:var(--teal);color:white!important;border-radius:8px!important;padding:10px 20px!important}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px}
+  .page-hero{background:linear-gradient(125deg,var(--navy) 0%,#0F2035 100%);padding:80px 0 72px;text-align:center;color:white}
+  .page-hero .eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--sky);margin-bottom:12px}
+  .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,62px);font-weight:600;line-height:1.05;margin-bottom:14px}
+  .page-hero h1 em{font-style:italic;color:var(--sky)}
+  .page-hero p{font-size:16px;color:rgba(255,255,255,.65);max-width:560px;margin:0 auto}
+  .support-section{padding:88px 0}
+  .support-inner{max-width:900px;margin:0 auto;padding:0 24px}
+  .support-intro{text-align:center;margin-bottom:56px}
+  .support-intro p{font-size:15px;color:var(--muted);line-height:1.8}
+  .measures-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .measure-card{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:26px 24px}
+  .measure-card .icon{width:44px;height:44px;background:linear-gradient(135deg,var(--teal),var(--navy));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:white;margin-bottom:14px}
+  .measure-card h3{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--navy);margin-bottom:8px}
+  .measure-card p{font-size:13.5px;color:var(--muted);line-height:1.65}
+  .note-box{margin-top:48px;background:var(--navy);border-radius:16px;padding:28px 30px;color:white;display:flex;gap:16px;align-items:flex-start}
+  .note-box .icon{font-size:24px}
+  .note-box p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.7}
+  .note-box strong{color:white}
+  .cta-band{background:linear-gradient(135deg,var(--teal) 0%,var(--navy) 100%);padding:72px 0;text-align:center}
+  .cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,48px);font-weight:600;color:white;margin-bottom:12px}
+  .cta-band p{font-size:16px;color:rgba(255,255,255,.7);margin-bottom:32px}
+  .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:all .25s;border:none;cursor:pointer}
+  .btn-white{background:white;color:var(--navy)}
+  .btn-white:hover{background:var(--cream)}
+  .btn-outline{background:transparent;color:white;border:1.5px solid rgba(255,255,255,.4)}
+  .btn-outline:hover{background:rgba(255,255,255,.1)}
+  footer{background:var(--navy)}
+  .footer-bottom-inner{max-width:1200px;margin:0 auto;padding:24px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.4);flex-wrap:wrap;gap:12px}
+  .footer-bottom-inner a{color:rgba(255,255,255,.4);text-decoration:none}
+  @media(max-width:768px){.nav-links{display:none}.hamburger{display:block}.measures-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="inner">
+    <div><span class="tb-badge">⭐ CQC Regulated</span><span class="tb-badge">🏆 Homecare.co.uk Rated</span></div>
+    <span>📞 01619524505 | 07983571259 · Mon–Fri 9am–7pm</span>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="diamond-heart-logo.jpg" alt="Diamond Heart Health Care" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="has-drop">
+        <a href="/about">About ▾</a>
+        <div class="dropdown">
+          <a href="/about#story">Our Story</a>
+          <a href="/about#vision">Our Vision</a>
+          <a href="/about#mission">Our Mission</a>
+          <a href="/about#values">Our Values</a>
+        </div>
+      </li>
+      <li><a href="/services">Services</a></li>
+      <li class="has-drop">
+        <a href="/training">Training ▾</a>
+        <div class="dropdown">
+          <a href="/training#staff">Staff Training</a>
+          <a href="/training#inhouse">In-House Training</a>
+          <a href="/training#nurses">Nurses Revalidation</a>
+        </div>
+      </li>
+      <li><a href="/jobs">Jobs</a></li>
+      <li><a href="/contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="eyebrow">Keeping You Safe</p>
+  <h1>Coronavirus Help <em>&amp; Support</em></h1>
+  <p>The health and safety of our clients and carers has always been our top priority. Here's how we continue to manage infection control across every visit.</p>
+</div>
+
+<section class="support-section">
+  <div class="support-inner">
+    <div class="support-intro">
+      <p>Our infection prevention and control practices are built into everyday care, in line with CQC guidance and current public health advice. If you have specific concerns about a vulnerable client or family member, please get in touch and we'll talk it through.</p>
+    </div>
+    <div class="measures-grid">
+      <div class="measure-card">
+        <div class="icon">🧼</div>
+        <h3>Rigorous Hygiene Standards</h3>
+        <p>Handwashing, sanitising and PPE use are standard practice for every carer on every visit.</p>
+      </div>
+      <div class="measure-card">
+        <div class="icon">🩺</div>
+        <h3>Health Monitoring</h3>
+        <p>Staff are trained to recognise symptoms early and follow clear guidance if unwell.</p>
+      </div>
+      <div class="measure-card">
+        <div class="icon">📋</div>
+        <h3>Risk Assessments</h3>
+        <p>Individual client risk assessments are kept up to date and reviewed regularly.</p>
+      </div>
+      <div class="measure-card">
+        <div class="icon">📞</div>
+        <h3>Open Communication</h3>
+        <p>We keep families informed and are always reachable with questions or concerns.</p>
+      </div>
+    </div>
+    <div class="note-box">
+      <div class="icon">ℹ️</div>
+      <p><strong>Have a specific question?</strong> Our care team is happy to talk through our current infection control measures for your situation — just give us a call or send a message.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div style="max-width:700px;margin:0 auto;padding:0 24px;">
+    <h2>Questions About Our Safety Measures?</h2>
+    <p>Get in touch and our team will be glad to help.</p>
+    <div class="cta-row">
+      <a href="tel:01619524505" class="btn btn-white">📞 Call 01619524505</a>
+      <a href="/contact" class="btn btn-outline">Contact Us →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom-inner">
+    <span>© 2025 Diamond Heart Health Care Limited. All rights reserved.</span>
+    <div style="display:flex;gap:20px;"><a href="/privacy">Privacy Policy</a><a href="/sitemap">Sitemap</a></div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger?.addEventListener('click', () => {
+    const open = navLinks.style.display === 'flex';
+    navLinks.style.display = open ? 'none' : 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '72px';
+    navLinks.style.left = '0';
+    navLinks.style.right = '0';
+    navLinks.style.background = 'white';
+    navLinks.style.padding = '16px 24px 24px';
+    navLinks.style.boxShadow = '0 8px 32px rgba(0,0,0,.12)';
+    navLinks.style.borderTop = '1px solid var(--border)';
+    navLinks.style.zIndex = '99';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Care & Support Services | Diamond Heart Health Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--navy:#123B5C;--teal:#EE6C20;--sky:#F5934D;--gold:#C94A0F;--cream:#F7F4EF;--white:#FFFFFF;--charcoal:#2D3748;--muted:#6B7280;--border:#E2E8F0}
+  body{font-family:'Inter',sans-serif;color:var(--charcoal);background:var(--white)}
+  .top-bar{background:var(--navy);color:rgba(255,255,255,.75);font-size:12px;padding:8px 0}
+  .top-bar .inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}
+  .tb-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:3px 10px;font-size:11px;margin-right:8px}
+  nav{background:var(--white);position:sticky;top:0;z-index:100;box-shadow:0 1px 0 var(--border),0 4px 24px rgba(18,59,92,.06)}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo-img{height:52px;width:auto;display:block}
+  .logo-mark{width:44px;height:44px;background:linear-gradient(135deg,var(--teal),var(--navy));border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:22px}
+  .logo-text strong{display:block;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--navy)}
+  .logo-text span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+  .nav-links a{font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;padding:8px 12px;border-radius:6px;transition:all .2s}
+  .nav-links a:hover{color:var(--teal);background:rgba(238,108,32,.06)}
+  .nav-links .has-drop{position:relative}
+  .nav-links .has-drop:hover .dropdown{opacity:1;pointer-events:all;transform:translateY(0)}
+  .dropdown{position:absolute;top:calc(100% + 8px);left:0;background:white;border:1px solid var(--border);border-radius:10px;padding:8px;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,.12);opacity:0;pointer-events:none;transform:translateY(-8px);transition:all .22s;z-index:50}
+  .dropdown a{display:block;font-size:13px;padding:9px 14px;border-radius:6px;color:var(--charcoal);text-transform:none;letter-spacing:0;font-weight:400}
+  .dropdown a:hover{background:var(--cream);color:var(--teal)}
+  .nav-cta{background:var(--teal);color:white!important;border-radius:8px!important;padding:10px 20px!important}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px}
+  @media(max-width:768px){.nav-links{display:none}.hamburger{display:block}}
+  /* PAGE HERO */
+  .page-hero{background:linear-gradient(125deg,var(--navy) 0%,#0F2035 100%);padding:80px 0 72px;color:white}
+  .page-hero-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .page-hero .eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--sky);margin-bottom:12px}
+  .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:600;line-height:1.05;margin-bottom:14px}
+  .page-hero h1 em{font-style:italic;color:var(--sky)}
+  .page-hero p{font-size:16px;color:rgba(255,255,255,.65);line-height:1.7}
+  .hero-services-preview{display:flex;flex-direction:column;gap:12px}
+  .hs-item{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:14px;font-size:14px;color:rgba(255,255,255,.85);backdrop-filter:blur(8px)}
+  .hs-item .emoji{font-size:20px}
+  /* SERVICES DETAIL */
+  .services-detail{padding:80px 0 100px}
+  .services-inner{max-width:1100px;margin:0 auto;padding:0 24px}
+  .section-intro{text-align:center;margin-bottom:60px}
+  .section-intro .label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+  .section-intro h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,48px);font-weight:600;color:var(--navy);margin-bottom:12px}
+  .section-intro h2 em{font-style:italic;color:var(--teal)}
+  .section-intro p{font-size:15px;color:var(--muted);max-width:560px;margin:0 auto;line-height:1.7}
+  .big-services-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  .big-service{border:1.5px solid var(--border);border-radius:20px;overflow:hidden;transition:all .3s}
+  .big-service:hover{box-shadow:0 20px 56px rgba(238,108,32,.14);border-color:rgba(238,108,32,.2);transform:translateY(-4px)}
+  .bs-header{background:linear-gradient(135deg,var(--navy),#1B3F6B);padding:28px 28px 24px;position:relative}
+  .bs-emoji{font-size:44px;display:block;margin-bottom:14px}
+  .bs-header h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:white;margin-bottom:6px}
+  .bs-header .tag{background:rgba(245,147,77,.2);border:1px solid rgba(245,147,77,.3);border-radius:20px;padding:3px 10px;font-size:11px;color:var(--sky);letter-spacing:.06em;text-transform:uppercase}
+  .bs-body{padding:28px}
+  .bs-body p{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:20px}
+  .bs-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+  .bs-features li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--charcoal)}
+  .bs-features li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0}
+  .bs-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--teal);text-decoration:none;padding:10px 18px;border:1.5px solid var(--teal);border-radius:8px;transition:all .2s}
+  .bs-link:hover{background:var(--teal);color:white}
+  /* PROCESS SECTION */
+  .process-section{background:var(--cream);padding:80px 0}
+  .process-inner{max-width:1100px;margin:0 auto;padding:0 24px}
+  .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;position:relative}
+  .process-steps::before{content:'';position:absolute;top:26px;left:12%;right:12%;height:1.5px;background:linear-gradient(90deg,var(--teal),var(--sky));z-index:0}
+  .process-step{text-align:center;position:relative;z-index:1}
+  .step-num{width:52px;height:52px;background:linear-gradient(135deg,var(--teal),var(--navy));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:white;margin:0 auto 16px;box-shadow:0 4px 16px rgba(238,108,32,.3)}
+  .process-step h4{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:8px}
+  .process-step p{font-size:13px;color:var(--muted);line-height:1.6}
+  /* CTA */
+  .cta-band{background:linear-gradient(135deg,var(--teal) 0%,var(--navy) 100%);padding:72px 0;text-align:center}
+  .cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,48px);font-weight:600;color:white;margin-bottom:12px}
+  .cta-band p{font-size:16px;color:rgba(255,255,255,.7);margin-bottom:32px}
+  .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:all .25s;border:none;cursor:pointer}
+  .btn-white{background:white;color:var(--navy)}
+  .btn-white:hover{background:var(--cream)}
+  .btn-outline{background:transparent;color:white;border:1.5px solid rgba(255,255,255,.4)}
+  .btn-outline:hover{background:rgba(255,255,255,.1)}
+  footer{background:var(--navy)}
+  .footer-bottom-inner{max-width:1200px;margin:0 auto;padding:24px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.4);flex-wrap:wrap;gap:12px}
+  .footer-bottom-inner a{color:rgba(255,255,255,.4);text-decoration:none}
+  @media(max-width:768px){.page-hero-inner{grid-template-columns:1fr}.big-services-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr 1fr}.process-steps::before{display:none}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="inner">
+    <div><span class="tb-badge">⭐ CQC Regulated</span><span class="tb-badge">🏆 Homecare.co.uk Rated</span></div>
+    <span>📞 01619524505 | 07983571259 · Mon–Fri 9am–7pm</span>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="diamond-heart-logo.jpg" alt="Diamond Heart Health Care" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="has-drop">
+        <a href="/about">About ▾</a>
+        <div class="dropdown">
+          <a href="/about#story">Our Story</a>
+          <a href="/about#vision">Our Vision</a>
+          <a href="/about#mission">Our Mission</a>
+          <a href="/about#values">Our Values</a>
+        </div>
+      </li>
+      <li><a href="/services">Services</a></li>
+      <li class="has-drop">
+        <a href="/training">Training ▾</a>
+        <div class="dropdown">
+          <a href="/training#staff">Staff Training</a>
+          <a href="/training#inhouse">In-House Training</a>
+          <a href="/training#nurses">Nurses Revalidation</a>
+        </div>
+      </li>
+      <li><a href="/jobs">Jobs</a></li>
+      <li><a href="/contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <p class="eyebrow">Personal Care & Support</p>
+      <h1>Home Care <em>Designed</em><br>Around You</h1>
+      <p>Every service we offer is shaped by the individual — their preferences, their routines, and their goals for independent living.</p>
+    </div>
+    <div class="hero-services-preview">
+      <div class="hs-item"><span class="emoji">🧠</span>Dementia & Memory Care</div>
+      <div class="hs-item"><span class="emoji">🏠</span>Live-in Care for Adults</div>
+      <div class="hs-item"><span class="emoji">👴</span>Elderly Home Assistance</div>
+      <div class="hs-item"><span class="emoji">👫</span>Companion Care for Seniors</div>
+      <div class="hs-item"><span class="emoji">🔄</span>Respite Care</div>
+    </div>
+  </div>
+</div>
+
+<section class="services-detail">
+  <div class="services-inner">
+    <div class="section-intro">
+      <p class="label">Our Services</p>
+      <h2>Care That <em>Transforms</em> Lives</h2>
+      <p>We offer a full range of home care services across Bolton, Greater Manchester, Salford and Wakefield — delivered with compassion, professionalism and genuine dedication.</p>
+    </div>
+    <div class="big-services-grid">
+
+      <div class="big-service" id="dementia">
+        <div class="bs-header">
+          <span class="bs-emoji">🧠</span>
+          <h3>Dementia Care</h3>
+          <span class="tag">Specialist</span>
+        </div>
+        <div class="bs-body">
+          <p>Our specialist dementia care services are designed to support individuals and families living with memory loss, helping maintain routine, dignity and quality of life at home.</p>
+          <ul class="bs-features">
+            <li>Routine-based daily structure</li>
+            <li>Memory stimulation activities</li>
+            <li>Family support and communication</li>
+            <li>Safe and familiar home environment maintained</li>
+          </ul>
+          <a href="/contact" class="bs-link">Enquire about Dementia Care →</a>
+        </div>
+      </div>
+
+      <div class="big-service" id="live-in">
+        <div class="bs-header">
+          <span class="bs-emoji">🏠</span>
+          <h3>Live-in Care</h3>
+          <span class="tag">24-Hour Support</span>
+        </div>
+        <div class="bs-body">
+          <p>A dedicated carer lives in your home, providing continuous round-the-clock support — the most comprehensive alternative to a care home, with all the comfort of familiar surroundings.</p>
+          <ul class="bs-features">
+            <li>One dedicated, consistent carer</li>
+            <li>24-hour availability including overnight</li>
+            <li>Personalised daily care routines</li>
+            <li>Companionship and social engagement</li>
+          </ul>
+          <a href="/contact" class="bs-link">Enquire about Live-in Care →</a>
+        </div>
+      </div>
+
+      <div class="big-service" id="elderly">
+        <div class="bs-header">
+          <span class="bs-emoji">👴</span>
+          <h3>Elderly Home Assistance</h3>
+          <span class="tag">Daily Support</span>
+        </div>
+        <div class="bs-body">
+          <p>Practical, day-to-day support for older adults to maintain independence at home — covering personal care, domestic tasks, meals and more.</p>
+          <ul class="bs-features">
+            <li>Personal hygiene & washing, dressing, bathing</li>
+            <li>Cooking, laundry and domestic assistance</li>
+            <li>Shopping and errand support</li>
+            <li>Hospital escort and appointment attendance</li>
+          </ul>
+          <a href="/contact" class="bs-link">Enquire about Elderly Care →</a>
+        </div>
+      </div>
+
+      <div class="big-service" id="companion">
+        <div class="bs-header">
+          <span class="bs-emoji">👫</span>
+          <h3>Companion Care</h3>
+          <span class="tag">Social Wellbeing</span>
+        </div>
+        <div class="bs-body">
+          <p>Loneliness has a real impact on health. Our companion carers provide regular, meaningful visits — focused on conversation, hobbies and emotional wellbeing.</p>
+          <ul class="bs-features">
+            <li>Regular scheduled visits and check-ins</li>
+            <li>Shared activities and interests</li>
+            <li>Outings and community engagement</li>
+            <li>Cognitive and emotional stimulation</li>
+          </ul>
+          <a href="/contact" class="bs-link">Enquire about Companion Care →</a>
+        </div>
+      </div>
+
+      <div class="big-service" id="respite">
+        <div class="bs-header">
+          <span class="bs-emoji">🔄</span>
+          <h3>Respite Care</h3>
+          <span class="tag">Family Relief</span>
+        </div>
+        <div class="bs-body">
+          <p>A much-needed break for family caregivers — our team steps in to provide professional, seamless care so you can recharge without worry.</p>
+          <ul class="bs-features">
+            <li>Short-term or planned respite care</li>
+            <li>Fully briefed carer handovers</li>
+            <li>Flexible durations — hours to weeks</li>
+            <li>Peace of mind for the whole family</li>
+          </ul>
+          <a href="/contact" class="bs-link">Enquire about Respite Care →</a>
+        </div>
+      </div>
+
+      <div class="big-service" id="abi">
+        <div class="bs-header">
+          <span class="bs-emoji">🧩</span>
+          <h3>ABI & Re-enablement</h3>
+          <span class="tag">Specialist</span>
+        </div>
+        <div class="bs-body">
+          <p>Specialist support for those recovering from acquired brain injury (ABI) or working through re-enablement programmes to rebuild independence after illness or injury.</p>
+          <ul class="bs-features">
+            <li>Acquired brain injury (ABI) support</li>
+            <li>Rapid response & assessment services</li>
+            <li>Re-enablement goal planning</li>
+            <li>Coordination with NHS and social care</li>
+          </ul>
+          <a href="/contact" class="bs-link">Enquire about Specialist Care →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="process-inner">
+    <div class="section-intro">
+      <p class="label">Getting Started</p>
+      <h2>How It <em>Works</em></h2>
+      <p>Starting care with us is simple. We'll walk you through every step.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h4>Get in Touch</h4>
+        <p>Call us or fill in our contact form — a friendly care advisor will respond within one business day.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h4>Free Assessment</h4>
+        <p>We visit you at home (or speak with you by phone) to understand your needs, preferences and routines.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h4>Personalised Plan</h4>
+        <p>We design a care plan built entirely around you — reviewing and updating it as your needs evolve.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h4>Care Begins</h4>
+        <p>Your dedicated carer starts — and our management team stays in regular contact to ensure everything is right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div style="max-width:700px;margin:0 auto;padding:0 24px;">
+    <h2>Ready to Explore Your Options?</h2>
+    <p>No obligation — just a conversation. Our team is ready to help you find the right care for your family.</p>
+    <div class="cta-row">
+      <a href="tel:01619524505" class="btn btn-white">📞 Call 01619524505</a>
+      <a href="/contact" class="btn btn-outline">Send an Enquiry →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom-inner">
+    <span>© 2025 Diamond Heart Health Care Limited. All rights reserved.</span>
+    <div style="display:flex;gap:20px;"><a href="/privacy">Privacy Policy</a><a href="/sitemap">Sitemap</a></div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger?.addEventListener('click', () => {
+    const open = navLinks.style.display === 'flex';
+    navLinks.style.display = open ? 'none' : 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '72px';
+    navLinks.style.left = '0';
+    navLinks.style.right = '0';
+    navLinks.style.background = 'white';
+    navLinks.style.padding = '16px 24px 24px';
+    navLinks.style.boxShadow = '0 8px 32px rgba(0,0,0,.12)';
+    navLinks.style.borderTop = '1px solid var(--border)';
+    navLinks.style.zIndex = '99';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Diamond Heart Health Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--navy:#123B5C;--teal:#EE6C20;--sky:#F5934D;--gold:#C94A0F;--cream:#F7F4EF;--white:#FFFFFF;--charcoal:#2D3748;--muted:#6B7280;--border:#E2E8F0}
+  body{font-family:'Inter',sans-serif;color:var(--charcoal);background:var(--white)}
+  /* TOP BAR */
+  .top-bar{background:var(--navy);color:rgba(255,255,255,.75);font-size:12px;letter-spacing:.04em;padding:8px 0}
+  .top-bar .inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  .top-bar a{color:rgba(255,255,255,.75);text-decoration:none}
+  .tb-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:3px 10px;font-size:11px}
+  /* NAV */
+  nav{background:var(--white);position:sticky;top:0;z-index:100;box-shadow:0 1px 0 var(--border),0 4px 24px rgba(18,59,92,.06)}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo-img{height:52px;width:auto;display:block}
+  .logo-mark{width:44px;height:44px;background:linear-gradient(135deg,var(--teal),var(--navy));border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .logo-text strong{display:block;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--navy)}
+  .logo-text span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+  .nav-links a{font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;padding:8px 12px;border-radius:6px;transition:all .2s}
+  .nav-links a:hover{color:var(--teal);background:rgba(238,108,32,.06)}
+  .nav-links .has-drop{position:relative}
+  .nav-links .has-drop:hover .dropdown{opacity:1;pointer-events:all;transform:translateY(0)}
+  .dropdown{position:absolute;top:calc(100% + 8px);left:0;background:white;border:1px solid var(--border);border-radius:10px;padding:8px;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,.12);opacity:0;pointer-events:none;transform:translateY(-8px);transition:all .22s;z-index:50}
+  .dropdown a{display:block;font-size:13px;padding:9px 14px;border-radius:6px;color:var(--charcoal);text-transform:none;letter-spacing:0;font-weight:400}
+  .dropdown a:hover{background:var(--cream);color:var(--teal)}
+  .nav-cta{background:var(--teal);color:white!important;border-radius:8px!important;padding:10px 20px!important}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px}
+  @media(max-width:768px){.nav-links{display:none}.hamburger{display:block}}
+  /* PAGE HERO */
+  .page-hero{background:linear-gradient(125deg,var(--navy) 0%,#0F2035 45%,#1B3F6B 100%);padding:80px 0 72px;text-align:center;color:white}
+  .page-hero .eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--sky);margin-bottom:12px}
+  .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,70px);font-weight:600;line-height:1.05;margin-bottom:14px}
+  .page-hero h1 em{font-style:italic;color:var(--sky)}
+  .page-hero p{font-size:16px;color:rgba(255,255,255,.65);max-width:500px;margin:0 auto}
+  /* CONTACT SECTION */
+  .contact-section{padding:80px 0 100px}
+  .contact-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+  .contact-info-panel h2{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:var(--navy);margin-bottom:14px}
+  .contact-info-panel p{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:32px}
+  .info-cards{display:flex;flex-direction:column;gap:16px}
+  .info-card{background:var(--cream);border-radius:14px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start;border:1px solid var(--border)}
+  .info-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--teal),var(--navy));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;color:white}
+  .info-card h4{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em}
+  .info-card p,.info-card a{font-size:14px;color:var(--charcoal);line-height:1.6;text-decoration:none}
+  .info-card a:hover{color:var(--teal)}
+  .hours-badge{background:linear-gradient(135deg,var(--teal),var(--navy));color:white;border-radius:14px;padding:20px 22px;margin-top:16px}
+  .hours-badge h4{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:10px}
+  .hours-row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
+  .hours-row strong{color:white}
+  .hours-row span{color:rgba(255,255,255,.65)}
+  /* FORM */
+  .contact-form-wrap{background:white;border:1px solid var(--border);border-radius:20px;padding:40px;box-shadow:0 8px 40px rgba(18,59,92,.08)}
+  .form-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--navy);margin-bottom:6px}
+  .form-sub{font-size:14px;color:var(--muted);margin-bottom:28px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-group{margin-bottom:18px}
+  .form-group label{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);margin-bottom:6px}
+  .form-group input,.form-group select,.form-group textarea{width:100%;border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:14px;font-family:'Inter',sans-serif;color:var(--charcoal);background:var(--cream);outline:none;transition:border-color .2s}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--teal);background:white}
+  .form-group textarea{min-height:110px;resize:vertical}
+  .btn-submit{width:100%;background:var(--teal);color:white;border:none;border-radius:10px;padding:15px;font-size:15px;font-weight:600;cursor:pointer;transition:all .25s;font-family:'Inter',sans-serif;letter-spacing:.02em}
+  .btn-submit:hover{background:var(--navy);transform:translateY(-1px)}
+  .form-note{font-size:12px;color:var(--muted);text-align:center;margin-top:14px}
+  /* MAP STRIP */
+  .map-strip{background:var(--cream);padding:60px 0}
+  .map-inner{max-width:1100px;margin:0 auto;padding:0 24px;text-align:center}
+  .regions-grid{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+  .region-pill{background:white;border:1.5px solid var(--border);border-radius:40px;padding:12px 24px;font-size:14px;font-weight:500;color:var(--navy);display:flex;align-items:center;gap:8px}
+  .region-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--teal)}
+  /* FOOTER */
+  footer{background:var(--navy);color:rgba(255,255,255,.7)}
+  .footer-bottom-inner{max-width:1200px;margin:0 auto;padding:24px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.4);flex-wrap:wrap;gap:12px}
+  .footer-bottom-inner a{color:rgba(255,255,255,.4);text-decoration:none}
+  @media(max-width:768px){.contact-inner{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="inner">
+    <div style="display:flex;gap:12px;">
+      <span class="tb-badge">⭐ CQC Regulated</span>
+      <span class="tb-badge">🏆 Homecare.co.uk Rated</span>
+    </div>
+    <span>📞 01619524505 | 07983571259 · Mon–Fri 9am–7pm</span>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="diamond-heart-logo.jpg" alt="Diamond Heart Health Care" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="has-drop">
+        <a href="/about">About ▾</a>
+        <div class="dropdown">
+          <a href="/about#story">Our Story</a>
+          <a href="/about#vision">Our Vision</a>
+          <a href="/about#mission">Our Mission</a>
+          <a href="/about#values">Our Values</a>
+        </div>
+      </li>
+      <li><a href="/services">Services</a></li>
+      <li class="has-drop">
+        <a href="/training">Training ▾</a>
+        <div class="dropdown">
+          <a href="/training#staff">Staff Training</a>
+          <a href="/training#inhouse">In-House Training</a>
+          <a href="/training#nurses">Nurses Revalidation</a>
+        </div>
+      </li>
+      <li><a href="/jobs">Jobs</a></li>
+      <li><a href="/contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="eyebrow">Get in Touch</p>
+  <h1>We're Here to <em>Help</em></h1>
+  <p>Whether you need care for yourself or a loved one, or you're a healthcare employer looking for staff — we'd love to hear from you.</p>
+</div>
+
+<section class="contact-section">
+  <div class="contact-inner">
+    <div class="contact-info-panel">
+      <h2>Talk to Our Care Team</h2>
+      <p>We understand this can be a significant decision. Our friendly team will guide you through everything — no pressure, no obligation.</p>
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div>
+            <h4>Phone</h4>
+            <p><a href="tel:01619524505">01619524505</a><br><a href="tel:07983571259">07983571259</a></p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">✉</div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:info@diamondhearthealthcare.co.uk">info@diamondhearthealthcare.co.uk</a></p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div>
+            <h4>Areas We Cover</h4>
+            <p>Bolton · Greater Manchester · Manchester · Salford · Wakefield</p>
+          </div>
+        </div>
+      </div>
+      <div class="hours-badge">
+        <h4>Office Hours</h4>
+        <div class="hours-row"><strong>Monday – Friday</strong><span>9:00am – 7:00pm</span></div>
+        <div class="hours-row"><strong>Saturday – Sunday</strong><span>Emergency line only</span></div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <h2 class="form-title">Send Us a Message</h2>
+      <p class="form-sub">We aim to respond within 1 business day.</p>
+      <!-- WordPress: replace this with [contact-form-7 id="XX"] or your preferred plugin shortcode -->
+      <!-- As raw HTML for paste-in use: -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="first_name" placeholder="Jane">
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="last_name" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="jane@email.com">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="07xxx xxxxxx">
+      </div>
+      <div class="form-group">
+        <label for="enquiry">Type of Enquiry</label>
+        <select id="enquiry" name="enquiry">
+          <option value="">— Please select —</option>
+          <option>Care for myself or a family member</option>
+          <option>Live-in care enquiry</option>
+          <option>Dementia care enquiry</option>
+          <option>Staff / employment enquiry</option>
+          <option>General information</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us a little about what you need — we're here to help…"></textarea>
+      </div>
+      <button class="btn-submit" onclick="this.textContent='✓ Message Sent — We\'ll be in touch!'; this.style.background='#27ae60';">Send Message →</button>
+      <p class="form-note">🔒 Your details are kept private and never shared with third parties.</p>
+    </div>
+  </div>
+</section>
+
+<section class="map-strip">
+  <div class="map-inner">
+    <p style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Areas we serve</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--navy);">Serving Communities Across the North of England</h2>
+    <div class="regions-grid">
+      <div class="region-pill"><div class="dot"></div>Bolton</div>
+      <div class="region-pill"><div class="dot"></div>Greater Manchester</div>
+      <div class="region-pill"><div class="dot"></div>Manchester City</div>
+      <div class="region-pill"><div class="dot"></div>Salford</div>
+      <div class="region-pill"><div class="dot"></div>Wakefield</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom-inner">
+    <span>© 2025 Diamond Heart Health Care Limited. All rights reserved.</span>
+    <div style="display:flex;gap:20px;"><a href="/privacy">Privacy Policy</a><a href="/sitemap">Sitemap</a></div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger?.addEventListener('click', () => {
+    const open = navLinks.style.display === 'flex';
+    navLinks.style.display = open ? 'none' : 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '72px';
+    navLinks.style.left = '0';
+    navLinks.style.right = '0';
+    navLinks.style.background = 'white';
+    navLinks.style.padding = '16px 24px 24px';
+    navLinks.style.boxShadow = '0 8px 32px rgba(0,0,0,.12)';
+    navLinks.style.borderTop = '1px solid var(--border)';
+    navLinks.style.zIndex = '99';
+  });
+</script>
+</body>
+</html>
